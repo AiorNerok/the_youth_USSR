@@ -5,15 +5,16 @@ import { LogoIcon } from "./icon/logo";
 
 export const Header: FC = () => {
   return (
-    <header className="flex items-center h-[59px] justify-between">
-      <div>
+    <header className="flex items-center px-[10px] h-[59px] justify-between">
+      <div className="w-[300px]">
         <span>
           <LogoIcon />
         </span>
       </div>
       <div>
-        <h3 className="font-gt hidden md:block">Привет, Татьяна</h3>
+        <h3 className="font-gt hidden md:block">Привет, Гилфойл</h3>
       </div>
+    <div className="flex-1"/>
       <div>
         <span>
           <HelpIcon />
