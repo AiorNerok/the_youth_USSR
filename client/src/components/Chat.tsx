@@ -120,8 +120,7 @@ export const Chat = () => {
                           <li>{post.shareCount} shares</li>
                         </ul>
 
-                        <a
-                          href="#"
+                        <p
                           className={classNames(
                             "absolute inset-0 rounded-md",
                             "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"

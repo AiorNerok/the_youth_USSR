@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 
-export const Burger = () => {
+export const Burger:FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
