@@ -10,3 +10,4 @@ export * from "./help";
 export * from "./notification";
 export * from "./search";
 export * from './remove'
+export * from './logout'
