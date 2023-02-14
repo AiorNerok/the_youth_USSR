@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Burger } from "./Burger";
 import Dropdown from "./Dropdown";
 import { HelpIcon, NotificationIcon, RemoveIcon, SearchIcon } from "./icon";
 import { LogoIcon } from "./icon/logo";
@@ -6,16 +7,18 @@ import { LogoIcon } from "./icon/logo";
 export const Header: FC = () => {
   return (
     <header className="flex items-center px-[10px] h-[59px] justify-between bg-prime-white screen-prime:rounded-t-xl">
-      <div className="w-[300px] ml-[10px]">
-        <span>
-          <LogoIcon />
-        </span>
+      <div className="grow flex items-center">
+        <div className="flex-1 max-w-[288px] ml-[10px]">
+          <span>
+            <LogoIcon />
+          </span>
+        </div>
+        <div className="hidden screen-toggle:block mr-4">
+          <h3 className="font-gt">Привет, Гилфойл</h3>
+        </div>
       </div>
-      <div>
-        <h3 className="font-gt hidden md:block">Привет, Гилфойл</h3>
-      </div>
-      <div className="flex-1" />
-      <div className="[&>*]:mr-8 last:[&>*]:mr-[10px] flex items-center">
+
+      <div className="[&>*]:mr-8 last:[&>*]:mr-[10px] items-center hidden screen-toggle:flex">
         <div>
           <span>
             <HelpIcon />
@@ -40,6 +43,10 @@ export const Header: FC = () => {
           <NotificationIcon />
         </div>
         <Dropdown />
+      </div>
+
+      <div className="block screen-toggle:hidden">
+        <Burger />
       </div>
     </header>
   );
