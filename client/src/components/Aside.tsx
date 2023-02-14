@@ -91,7 +91,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover }) => {
 
   return (
     <li
-      className="flex items-center h-[46px] cursor-pointer hover:bg-prime-violet-1 transition-all duration-200 p-[10px] rounded-[10px] hover:-translate-y-[1px] hover:shadow-prime shadow-prime-violet-1"
+      className="flex items-center h-[46px] cursor-pointer hover:bg-prime-violet-1 transition-all duration-200 p-[10px] rounded-[10px] hover:-translate-y-[1px]"
       onMouseEnter={toggleIcon}
       onMouseLeave={toggleIcon}
     >
