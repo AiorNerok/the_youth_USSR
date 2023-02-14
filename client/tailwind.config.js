@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [ "./src/**/*.{js,jsx,ts,tsx}",],
+  content: [ "./src/**/*.{js,jsx,ts,tsx}","./public/**/*.html"],
   theme: {
     extend: {
       boxShadow:{
@@ -12,8 +12,10 @@ module.exports = {
     colors:{
       "prime":{
         'gray': '#F7F6F9',
+        "gray-3":'#F9F9F9',
         'white': '#fff',
-        'violet-1': '#EFE9FF'
+        'violet': '#BCAEFF',
+        'violet-1': '#EFE9FF',
       },
       'transparent': colors.transparent
     },
@@ -29,6 +31,9 @@ module.exports = {
     },
     fontFamily:{
       'gt': 'GT'
+    },
+    screens:{
+      "screen-prime": '1440px'
     }
   },
   plugins: [],
