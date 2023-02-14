@@ -5,8 +5,8 @@ import { LogoIcon } from "./icon/logo";
 
 export const Header: FC = () => {
   return (
-    <header className="flex items-center px-[10px] h-[59px] justify-between">
-      <div className="w-[300px]">
+    <header className="flex items-center px-[10px] h-[59px] justify-between bg-prime-white screen-prime:rounded-t-xl">
+      <div className="w-[300px] ml-[10px]">
         <span>
           <LogoIcon />
         </span>
@@ -15,7 +15,7 @@ export const Header: FC = () => {
         <h3 className="font-gt hidden md:block">Привет, Гилфойл</h3>
       </div>
       <div className="flex-1" />
-      <div className="[&>*]:mr-8 last:[&>*]:mr-0 flex items-center">
+      <div className="[&>*]:mr-8 last:[&>*]:mr-[10px] flex items-center">
         <div>
           <span>
             <HelpIcon />

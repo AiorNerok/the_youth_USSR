@@ -73,7 +73,7 @@ const arr = [
 export const Aside: FC = () => {
   return (
     <aside>
-      <ul className="flex flex-col">
+      <ul className="flex flex-col mx-[10px]">
         {arr.map(({ id, text, icon, iconHover }) => (
           <AsideItems key={id} text={text} icon={icon} iconHover={iconHover} />
         ))}
