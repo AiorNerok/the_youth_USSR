@@ -37,8 +37,7 @@ module.exports = {
       'gt': 'GT'
     },
     screens: {
-      "screen-prime": '1440px',
-      "screen-toggle": '768px'
+      "screen-prime": '1440px'
     }
   },
   plugins: [],
