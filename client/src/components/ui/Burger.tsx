@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
 
-export const Burger:FC = () => {
+export const Burger: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
-      className={`w-7 h-7 mx-1 space-y-[5px] flex flex-col justify-around items-center relative cursor-pointer [&>*]:w-full [&>*]:bg-prime-violet-2 [&>*]:block  [&>*]:h-[2px] [&>*]:rounded-full [&>*]:transition-all [&>*]:duration-300`}
+      className={`w-7 h-7 mx-1 space-y-[5px] flex flex-col justify-around items-center relative cursor-pointer [&>*]:w-full [&>*]:bg-uiColor-violet-2 [&>*]:block  [&>*]:h-[2px] [&>*]:rounded-full [&>*]:transition-all [&>*]:duration-300`}
       onClick={() => setIsOpen(!isOpen)}
     >
       <span

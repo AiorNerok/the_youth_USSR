@@ -1,4 +1,7 @@
 import { FC } from "react";
+
+import Dropdown from "components/shared/Dropdown";
+import { Burger } from "components/ui";
 import { HelpIcon, RemoveIcon, SearchIcon } from "shared/icon";
 import { LogoIcon } from "shared/icon/logo";
 
@@ -37,14 +40,12 @@ export const Header: FC = () => {
             </span>
           </div>
         </div>
-        <div>
-          {/* <NotificationIcon /> */}
-        </div>
-        {/* <Dropdown /> */}
+        <div>{/* <NotificationIcon /> */}</div>
+        <Dropdown />
       </div>
 
-      <div className="block screen:hidden">
-        {/* <Burger /> */}
+      <div className="block screen-toggle:hidden">
+        <Burger />
       </div>
     </header>
   );

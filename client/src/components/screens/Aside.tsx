@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { ListItem } from "./ListItem";
+import { ListItem } from "../ListItem";
 import {
   CompanyIcon,
   EventsIcon,
@@ -10,7 +10,7 @@ import {
   ServiceIcon,
   TeamIcon,
 } from "shared/icon";
-import { Tooltip } from "./ui/Tooltip";
+import { Tooltip } from "../ui/Tooltip";
 
 const arr = [
   {
