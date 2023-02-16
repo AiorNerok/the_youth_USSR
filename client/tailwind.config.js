@@ -3,7 +3,7 @@ const colors = require("tailwindcss/colors");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", 
+    "./src/**/*.{js,jsx,ts,tsx}",
     "./public/**/*.html"
   ],
   theme: {
@@ -23,6 +23,7 @@ module.exports = {
         "violet-2": "#8174A5",
         "green": "#84f1de",
         "black": "#2C2C2C",
+        "yellow": "#EFFF90"
       },
       transparent: colors.transparent,
     },

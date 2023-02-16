@@ -1,11 +1,14 @@
 import React, { FC } from "react";
 import { ListItemProps } from "types";
 
-export const ListItem: FC<ListItemProps> = ({ text, icon, iconHover }) => {
+export const ListItem = React.forwardRef<
+  HTMLSpanElement,
+  ListItemProps
+>(({ text, icon, iconHover }, ref) => {
   return (
     <>
       <span className="mr-5">{icon}</span>
-      <span>{text}</span>
+      <span ref={ref}>{text}</span>
     </>
   );
-};
+});
