@@ -4,6 +4,7 @@ import Dropdown from "components/shared/Dropdown";
 import { Burger } from "components/ui";
 import { HelpIcon, RemoveIcon, SearchIcon } from "shared/icon";
 import { LogoIcon } from "shared/icon/logo";
+import { Helper } from "components/shared";
 
 export const Header: FC = () => {
   return (
@@ -22,7 +23,7 @@ export const Header: FC = () => {
       <div className="[&>*]:mr-8 last:[&>*]:mr-[10px] items-center hidden screen-toggle:flex">
         <div>
           <span>
-            <HelpIcon />
+            <Helper />
           </span>
         </div>
         <div>

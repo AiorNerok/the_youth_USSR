@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { ListItem } from "../ListItem";
+import { ListItem } from "../ui/ListItem";
 
 import { HelpIcon, LogoutIcon, FlockIcon } from "shared/icon";
 

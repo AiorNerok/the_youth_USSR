@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { ListItem } from "../ListItem";
+import { ListItem } from "../ui/ListItem";
 import {
   CompanyIcon,
   EventsIcon,
@@ -159,7 +159,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
 
   return (
     <li
-      className="relative h-[46px] cursor-pointer hover:bg-prime-violet-1 transition-all duration-200 p-[10px] rounded-[10px] hover:-translate-y-[1px] select-none"
+      className="relative h-[46px] cursor-pointer hover:bg-uiColor-violet-1 transition-all duration-200 p-[10px] rounded-[10px] hover:-translate-y-[1px] select-none"
       onMouseEnter={toggleIcon}
       onMouseLeave={toggleIcon}
     >
