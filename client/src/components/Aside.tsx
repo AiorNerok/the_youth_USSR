@@ -140,7 +140,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
   useEffect(() => {
     if (refEl.current) {
       let { x, width, height } = refEl.current.getBoundingClientRect();
-      let left = x + width - 10;
+      let left = width + 56;
       let top;
       let classes;
 
