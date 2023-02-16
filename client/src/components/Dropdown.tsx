@@ -2,18 +2,30 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { ListItem } from "./ListItem";
 
-import { HelpIcon, LogoutIcon, FlockIcon } from "components/icon";
+import { HelpIcon, LogoutIcon, FlockIcon } from "shared/icon";
 
 const arr = [
   {
     id: 1,
     text: "Войти в личный кабинет",
     icon: <FlockIcon />,
-    iconHover: <FlockIcon isHover/>,
+    iconHover: <FlockIcon isHover />,
     classes: "",
   },
-  { id: 2, text: "Помощь", icon: <HelpIcon />, iconHover: <HelpIcon isHover />, classes: "" },
-  { id: 3, text: "Выйти", icon: <LogoutIcon />, iconHover: <LogoutIcon isHover  />, classes: "" },
+  {
+    id: 2,
+    text: "Помощь",
+    icon: <HelpIcon />,
+    iconHover: <HelpIcon isHover />,
+    classes: "",
+  },
+  {
+    id: 3,
+    text: "Выйти",
+    icon: <LogoutIcon />,
+    iconHover: <LogoutIcon isHover />,
+    classes: "",
+  },
 ];
 
 export default function Dropdown() {
@@ -56,7 +68,10 @@ export default function Dropdown() {
                   {({ active }) => {
                     return (
                       <button className="p-[10px] hover:bg-prime-violet-1 transition-all duration-300 rounded-[4px] w-full flex items-center mb-6 last:mb-0">
-                        <ListItem icon={active ? iconHover : icon} text={text} />
+                        <ListItem
+                          icon={active ? iconHover : icon}
+                          text={text}
+                        />
                       </button>
                     );
                   }}

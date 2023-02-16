@@ -9,8 +9,8 @@ import {
   NewsIcon,
   ServiceIcon,
   TeamIcon,
-} from "./icon";
-import { Tooltip } from "./Tooltip";
+} from "shared/icon";
+import { Tooltip } from "./ui/Tooltip";
 
 const arr = [
   {
@@ -147,7 +147,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
       if (tooltip.position === "top") {
         top = -height;
         classes = "rounded-bl-none";
-      } else if(tooltip.position === "bottom"){
+      } else if (tooltip.position === "bottom") {
         top = height;
         classes = "rounded-tl-none";
       }

@@ -4,10 +4,8 @@ import { HomePageProps } from "types";
 
 export const Home: FC<HomePageProps> = () => {
   return (
-    <div className="container relative min-h-screen min-h-[860px] max-w-[1440px] text-3xl font-bold mx-auto font-gt flex flex-col">
-      <div className="h-[40px] hidden screen-prime:block bg-transparent" />
-      <Header />
-      <div className="flex flex-1 bg-prime-white screen-prime:rounded-b-xl">
+    <div className="container relative h-screen min-h-[860px] max-w-[1440px] text-3xl font-bold mx-auto font-gt flex flex-col">
+      {/* <div className="flex flex-1 bg-prime-white screen-prime:rounded-b-xl">
         <div className="w-1/3 min-w-[255px] max-w-[300px] flex flex-col">
           <Aside />
           <div className="grow flex items-center justify-center">
@@ -19,7 +17,7 @@ export const Home: FC<HomePageProps> = () => {
       <div className="absolute bottom-[55px] right-[30px]">
         <Chat />
       </div>
-      <div className="h-[40px] hidden screen-prime:block bg-transparent" />
+      <div className="h-[40px] hidden screen-prime:block bg-transparent" /> */}
     </div>
   );
 };
