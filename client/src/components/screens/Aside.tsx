@@ -10,7 +10,8 @@ import {
   ServiceIcon,
   TeamIcon,
 } from "shared/icon";
-import { Tooltip } from "../ui/Tooltip";
+import { Tooltip } from "components/shared/Tooltip";
+
 
 const arr = [
   {
@@ -139,7 +140,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
 
   useEffect(() => {
     if (refEl.current) {
-      let { x, width, height } = refEl.current.getBoundingClientRect();
+      let { width, height } = refEl.current.getBoundingClientRect();
       let left = width + 56;
       let top;
       let classes;

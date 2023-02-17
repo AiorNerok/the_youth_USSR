@@ -4,4 +4,4 @@ export * from "./ui/ListItem";
 export * from "./screens/Aside";
 export * from "./shared/Assistant";
 export * from "./shared/Chat";
-export * from "./ui/Tooltip";
+export * from "./ui/TooltipUI";

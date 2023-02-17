@@ -5,9 +5,9 @@ import { LayoutProps } from "./interface";
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <div className="flex flex-col h-screen min-h-[860px]">
       <div className="h-[40px] hidden screen:block bg-transparent" />
-      <div className="max-w-[1440px] max-h-[860px] h-screen w-full mx-auto screen:rounded-xl bg-uiColor-white">
+      <div className="flex flex-col flex-1 max-w-[1440px] h-screen w-full mx-auto screen:rounded-xl bg-uiColor-white">
         <Header />
         <div className="flex flex-1 bg-uiColor-white screen-prime:rounded-b-xl">
           <div className="w-1/3 min-w-[255px] max-w-[300px] flex flex-col">
@@ -21,6 +21,6 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
         <div className="absolute bottom-[55px] right-[30px]"></div>
       </div>
       <div className="h-[40px] hidden screen:block bg-transparent" />
-    </>
+    </div>
   );
 };
