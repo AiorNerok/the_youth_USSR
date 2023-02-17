@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { ListItem } from "./ListItem";
+import { ListItem } from "../ui/ListItem";
 import {
   CompanyIcon,
   EventsIcon,
@@ -9,8 +9,9 @@ import {
   NewsIcon,
   ServiceIcon,
   TeamIcon,
-} from "./icon";
-import { Tooltip } from "./Tooltip";
+} from "shared/icon";
+import { Tooltip } from "components/shared/Tooltip";
+
 
 const arr = [
   {
@@ -139,7 +140,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
 
   useEffect(() => {
     if (refEl.current) {
-      let { x, width, height } = refEl.current.getBoundingClientRect();
+      let { width, height } = refEl.current.getBoundingClientRect();
       let left = width + 56;
       let top;
       let classes;
@@ -147,7 +148,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
       if (tooltip.position === "top") {
         top = -height;
         classes = "rounded-bl-none";
-      } else if(tooltip.position === "bottom"){
+      } else if (tooltip.position === "bottom") {
         top = height;
         classes = "rounded-tl-none";
       }
@@ -159,7 +160,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
 
   return (
     <li
-      className="relative h-[46px] cursor-pointer hover:bg-prime-violet-1 transition-all duration-200 p-[10px] rounded-[10px] hover:-translate-y-[1px] select-none"
+      className="relative h-[46px] cursor-pointer hover:bg-uiColor-violet-1 transition-all duration-200 p-[10px] rounded-[10px] hover:-translate-y-[1px] select-none"
       onMouseEnter={toggleIcon}
       onMouseLeave={toggleIcon}
     >

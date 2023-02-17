@@ -14,7 +14,7 @@ module.exports = {
     },
 
     colors: {
-      prime: {
+      uiColor: {
         "gray": "#F7F6F9",
         "gray-3": "#F9F9F9",
         "white": "#fff",
@@ -41,7 +41,7 @@ module.exports = {
       gt: "GT",
     },
     screens: {
-      "screen-prime": "1440px",
+      "screen": "1440px",
       "screen-toggle": "768px",
     },
   },

@@ -1,19 +1,31 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { ListItem } from "./ListItem";
+import { ListItem } from "../ui/ListItem";
 
-import { HelpIcon, LogoutIcon, FlockIcon } from "components/icon";
+import { HelpIcon, LogoutIcon, FlockIcon } from "shared/icon";
 
 const arr = [
   {
     id: 1,
     text: "Войти в личный кабинет",
     icon: <FlockIcon />,
-    iconHover: <FlockIcon isHover/>,
+    iconHover: <FlockIcon isHover />,
     classes: "",
   },
-  { id: 2, text: "Помощь", icon: <HelpIcon />, iconHover: <HelpIcon isHover />, classes: "" },
-  { id: 3, text: "Выйти", icon: <LogoutIcon />, iconHover: <LogoutIcon isHover  />, classes: "" },
+  {
+    id: 2,
+    text: "Помощь",
+    icon: <HelpIcon />,
+    iconHover: <HelpIcon isHover />,
+    classes: "",
+  },
+  {
+    id: 3,
+    text: "Выйти",
+    icon: <LogoutIcon />,
+    iconHover: <LogoutIcon isHover />,
+    classes: "",
+  },
 ];
 
 export default function Dropdown() {
@@ -39,7 +51,7 @@ export default function Dropdown() {
         leaveFrom="transform opacity-100"
         leaveTo="transform opacity-0"
       >
-        <Menu.Items className="absolute z-10 -top-[5px] -right-5 w-[315px] p-5 pt-[5.5px] bg-prime-white rounded-xl shadow-prime border-0 outline-none">
+        <Menu.Items className="absolute z-10 -top-[5px] -right-5 w-[315px] p-5 pt-[5.5px] bg-uiColor-white rounded-xl shadow-prime border-0 outline-none">
           <Menu.Item as={"div"} className="flex items-center mb-[52px]">
             <span className="flex-1">Бертрам Гилфойл</span>
             <span className="flex rounded-full overflow-hidden w-12 h-12">
@@ -55,8 +67,11 @@ export default function Dropdown() {
                 <Menu.Item key={id}>
                   {({ active }) => {
                     return (
-                      <button className="p-[10px] hover:bg-prime-violet-1 transition-all duration-300 rounded-[4px] w-full flex items-center mb-6 last:mb-0">
-                        <ListItem icon={active ? iconHover : icon} text={text} />
+                      <button className="p-[10px] hover:bg-uiColor-violet-1 transition-all duration-300 rounded-[4px] w-full flex items-center mb-6 last:mb-0">
+                        <ListItem
+                          icon={active ? iconHover : icon}
+                          text={text}
+                        />
                       </button>
                     );
                   }}

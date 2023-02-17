@@ -43,18 +43,18 @@ export const Assistant: FC = () => {
     "Играть в кино — последнее, о чем я мечтал",
     "Сыграть Джеймса Бонда? Почему бы и нет?! Ему давно пора сменить имидж. Против тачек и красоток я не возражаю, а вот мартини придется заменить на пинту пива в большой кружке",
     "Люблю русских людей — мужики суровые, а женщины очень красивые",
-  ]; 
+  ];
 
   return (
-    <div className="w-[178px] flex flex-col relative mx-auto items-center bg-prime-green rounded-2xl py-[40px]">
+    <div className="w-[178px] flex flex-col relative mx-auto items-center bg-uiColor-green rounded-2xl py-[40px]">
       <div className="h-[30px] absolute -top-[30px]">
-        <div className="mt-[6px] bg-prime-green rounded-full w-[60px] h-[60px] mb-[14px]">
+        <div className="mt-[6px] bg-uiColor-green rounded-full w-[60px] h-[60px] mb-[14px]">
           <img src={Wolf} alt="assistant" className="-translate-y-[5px]" />
         </div>
       </div>
-      <div className="text-center text-2 text-prime-violet-2">
+      <div className="text-center text-2 text-uiColor-violet-2">
         <p className="mb-[10px]">Ауфентий</p>
-        <p className="text-prime-black mx-5">
+        <p className="text-uiColor-black mx-5">
           {citatnik[Math.floor(Math.random() * citatnik.length)]}
           <br /> АУФ!
         </p>
