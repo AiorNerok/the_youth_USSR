@@ -1,5 +1,6 @@
 import { FC } from "react";
 
+
 import { QuestsProps } from "data/quests";
 import {FormatterDate} from 'utils/formatTimeCard'
 interface CardUIProps extends QuestsProps {}
@@ -12,7 +13,7 @@ export const CardUI: FC<CardUIProps> = ({
   title,
 }) => {
   return (
-    <div className="p-6 rounded-xl">
+    <div className="p-6 rounded-xl bg-uiColor-green-2">
       <div>
         <span>{title}</span>
         <span>{isCompleted}</span>

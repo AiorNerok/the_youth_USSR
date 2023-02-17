@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { ListItem } from "../ui/ListItem";
+import { ListItemUI } from "../ui/ListItemUI";
 
 import { HelpIcon, LogoutIcon, FlockIcon } from "shared/icon";
 
@@ -68,7 +68,7 @@ export default function Dropdown() {
                   {({ active }) => {
                     return (
                       <button className="p-[10px] hover:bg-uiColor-violet-1 transition-all duration-300 rounded-[4px] w-full flex items-center mb-6 last:mb-0">
-                        <ListItem
+                        <ListItemUI
                           icon={active ? iconHover : icon}
                           text={text}
                         />

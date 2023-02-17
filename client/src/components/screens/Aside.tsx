@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { ListItem } from "../ui/ListItem";
+import { ListItemUI } from "../ui/ListItemUI";
 import {
   CompanyIcon,
   EventsIcon,
@@ -11,7 +11,6 @@ import {
   TeamIcon,
 } from "shared/icon";
 import { Tooltip } from "components/shared/Tooltip";
-
 
 const arr = [
   {
@@ -165,7 +164,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
       onMouseLeave={toggleIcon}
     >
       <div className="relative flex items-center">
-        <ListItem text={text} icon={IconEl ? iconHover : icon} ref={refEl} />
+        <ListItemUI text={text} icon={IconEl ? iconHover : icon} ref={refEl} />
         <Tooltip {...tooltip} position={position} />
       </div>
     </li>

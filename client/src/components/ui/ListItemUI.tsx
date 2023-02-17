@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React from "react";
 import { ListItemProps } from "types";
 
-export const ListItem = React.forwardRef<HTMLSpanElement, ListItemProps>(
+export const ListItemUI = React.forwardRef<HTMLSpanElement, ListItemProps>(
   ({ text, icon }, ref) => {
     return (
       <>
