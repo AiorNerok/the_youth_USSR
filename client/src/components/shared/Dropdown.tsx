@@ -24,7 +24,7 @@ const arr = [
     text: "Выйти",
     icon: <LogoutIcon />,
     iconHover: <LogoutIcon isHover />,
-    href: "#",
+    href: "/login",
   },
 ];
 

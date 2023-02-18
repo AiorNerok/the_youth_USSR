@@ -208,6 +208,8 @@ interface TooltipPositionProps {
 }
 
 const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip, href }) => {
+  const location = useLocation();
+
   const [IconEl, setIconEl] = useState(icon);
   function toggleIcon(e: React.MouseEvent) {
     if (e.type === "mouseenter") setIconEl(true);
@@ -231,7 +233,9 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip, href }) => {
 
   return (
     <li
-      className="relative h-[46px] cursor-pointer hover:bg-uiColor-violet-1 transition-all duration-200 p-[10px] rounded-[10px] hover:-translate-y-[1px] select-none"
+      className={`${
+        location.pathname === href ? "bg-uiColor-violet-1" : ""
+      } relative h-[46px] cursor-pointer hover:bg-uiColor-violet-1  transition-all duration-200 p-[10px] rounded-[10px] hover:-translate-y-[1px] select-none`}
       onMouseEnter={toggleIcon}
       onMouseLeave={toggleIcon}
     >
