@@ -13,6 +13,7 @@ module.exports = {
     colors: {
       uiColor: {
         gray: "#F7F6F9",
+        "gray-2": "#D2D0D7",
         "gray-3": "#F9F9F9",
         white: "#fff",
         violet: "#BCAEFF",

@@ -1,19 +1,18 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-export const useUserStore = create(
+export const useUserStorage = create(
   persist(
     (set, get) => ({
       user: {
-        nickname: "",
+        name: "",
         password: "",
       },
-      login: () => set({ user: {} }),
-      logout: () => set({ user: {} }),
+      login: () => ({}),
+      logout: () => ({}),
     }),
     {
       name: "user",
-      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );
