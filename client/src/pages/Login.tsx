@@ -31,7 +31,7 @@ export const Login = () => {
       localStorage.setItem("user", username);
       navigate("/", { replace: true });
     } else if (username === "new" && password === "new") {
-      localStorage.removeItem("user");
+      localStorage.setItem("user", username);
       navigate("/", { replace: true });
     } else {
       setError("username", {

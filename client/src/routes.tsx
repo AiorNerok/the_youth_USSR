@@ -1,5 +1,5 @@
 import { Layout } from "components/layout";
-import { Company, Home, Login, Message, News, Services } from "pages";
+import { Company, Empty, Home, Login, Message, News, Services } from "pages";
 import { Team } from "pages/Team";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -35,6 +35,10 @@ export const routes = createBrowserRouter([
       {
         path: "/Message",
         element: <Message />,
+      },
+      {
+        path: "/*",
+        element: <Empty />,
       },
     ],
   },

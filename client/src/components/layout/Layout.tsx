@@ -18,7 +18,7 @@ export const Layout: FC<LayoutProps> = () => {
               <Assistant />
             </div>
           </div>
-          <div className="flex-1 bg-uiColor-gray-3 max-h-[771px] overflow-hidden mx-auto">
+          <div className="flex-1 bg-uiColor-gray-3 max-h-[835px] overflow-hidden mx-auto">
             <Outlet />
           </div>
         </div>
