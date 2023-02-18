@@ -1,11 +1,21 @@
 import { Aside, Header } from "components/screens";
 import { Assistant } from "components/shared/Assistant";
-import { FC } from "react";
+import { FC, useLayoutEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 interface LayoutProps {}
 
 export const Layout: FC<LayoutProps> = () => {
+  useLayoutEffect(() => {
+    // Никогда так не делай. Это плохо. Не повторяй за мной
+    if (
+      localStorage.getItem("user") === null &&
+      window.location.pathname !== "/login"
+    ) {
+      window.location.href = "/login";
+    }
+  }, []);
+
   return (
     <div className="flex flex-col h-screen min-h-[860px]">
       <div className="h-[40px] hidden screen:block bg-transparent" />
