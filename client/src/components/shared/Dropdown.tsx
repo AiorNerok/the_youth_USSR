@@ -1,5 +1,8 @@
-import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+
+import { useNavigate } from "react-router-dom";
+
 import { ListItemUI } from "../ui/ListItemUI";
 
 import { HelpIcon, LogoutIcon, FlockIcon } from "shared/icon";
@@ -19,16 +22,14 @@ const arr = [
     iconHover: <HelpIcon isHover />,
     href: "#",
   },
-  {
-    id: 3,
-    text: "Выйти",
-    icon: <LogoutIcon />,
-    iconHover: <LogoutIcon isHover />,
-    href: "/login",
-  },
 ];
 
 export default function Dropdown() {
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("user");
+    navigate("/login", { replace: true });
+  };
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -78,6 +79,21 @@ export default function Dropdown() {
                 </Menu.Item>
               );
             })}
+            <Menu.Item>
+              {({ active }) => {
+                return (
+                  <button
+                    onClick={logout}
+                    className="p-[10px] hover:bg-uiColor-violet-1 transition-all duration-300 rounded-[4px] w-full flex items-center mb-6 last:mb-0"
+                  >
+                    <ListItemUI
+                      icon={active ? <LogoutIcon isHover /> : <LogoutIcon />}
+                      text={"Выйти"}
+                    />
+                  </button>
+                );
+              }}
+            </Menu.Item>
           </div>
         </Menu.Items>
       </Transition>
