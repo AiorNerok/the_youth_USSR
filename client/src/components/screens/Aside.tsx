@@ -116,7 +116,7 @@ export const Aside: FC = () => {
   const [arr, setArr] = useState<any>(arrUser);
 
   useEffect(() => {
-    if ( localStorage.getItem('user') === "hr") {
+    if (localStorage.getItem('user') === "hr") {
       let arrHR = [
         {
           icon: <PersonalDataIcon />,
@@ -144,7 +144,7 @@ export const Aside: FC = () => {
         },
         {
           icon: <PathEnterIcon />,
-          href: "#",
+          href: "/newemployee",
           id: 5,
           text: "Новый сотрудник",
         },
