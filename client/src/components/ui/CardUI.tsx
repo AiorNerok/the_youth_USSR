@@ -32,7 +32,7 @@ export const CardUI: FC<CardUIProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >
-            <rect width="13" height="13" fill="url(#pattern0)" />
+            <rect width="13" height="13" fill="#FFFA83" />
             <defs>
               <pattern
                 id="pattern0"
