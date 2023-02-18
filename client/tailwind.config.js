@@ -27,6 +27,8 @@ module.exports = {
         "yellow-1": "#FCFFE7",
         "pink-1": "#FFC3C3",
         "blue-1": "#BAE6FF",
+        "pink": "#FF8CA9",
+        "pink-1": "#FFC3C3",
       },
       transparent: colors.transparent,
     },

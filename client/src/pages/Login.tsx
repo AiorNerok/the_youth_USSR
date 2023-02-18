@@ -1,6 +1,7 @@
 import { Assistant } from "components";
 import { useMemo, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { AsterikIcon, PasswordIcon, PasswordShowIcon } from "shared/icon";
 
 type Inputs = {
@@ -9,6 +10,7 @@ type Inputs = {
 };
 
 export const Login = () => {
+  let navigate = useNavigate();
   const [showPass, setShowPass] = useState<boolean>(true);
 
   const AssistantCallBack = useMemo(() => <Assistant />, []);
@@ -25,8 +27,12 @@ export const Login = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     let { username, password } = data;
 
-    if (1) {
-      console.log("ok", { username, password });
+    if (username === "hr" && password === "hr") {
+      localStorage.setItem("user", username);
+      navigate("/", { replace: true });
+    } else if (username === "new" && password === "new") {
+      localStorage.removeItem("user");
+      navigate("/", { replace: true });
     } else {
       setError("username", {
         type: "custom",

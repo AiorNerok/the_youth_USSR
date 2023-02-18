@@ -113,14 +113,10 @@ const arrUser = [
 ];
 
 export const Aside: FC = () => {
-  let location = useLocation();
-
-  let search = location.search.split("=")[1];
-
   const [arr, setArr] = useState<any>(arrUser);
 
   useEffect(() => {
-    if (search === "hr") {
+    if ( localStorage.getItem('user') === "hr") {
       let arrHR = [
         {
           icon: <PersonalDataIcon />,
@@ -130,7 +126,7 @@ export const Aside: FC = () => {
         },
         {
           icon: <MessageIcon />,
-          href: "#",
+          href: "/message",
           id: 2,
           text: "Сообщения",
         },
@@ -181,7 +177,7 @@ export const Aside: FC = () => {
     } else {
       setArr(arrUser);
     }
-  }, [search]);
+  }, []);
 
   return (
     <aside>
