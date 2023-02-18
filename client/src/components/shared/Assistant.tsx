@@ -14,10 +14,10 @@ export const Assistant: FC = () => {
         </div>
       </div>
       <div className="text-center text-2 text-uiColor-violet-2">
-        <p className="mb-[10px]">Ауфентий</p>
+        <p className="mb-[10px]">Вуфентий</p>
         <p className="text-uiColor-black mx-5">
           {citatnik[Math.floor(Math.random() * citatnik.length)]}
-          <br /> АУФ!
+          <br /> ВУФ!
         </p>
       </div>
     </div>
