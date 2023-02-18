@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import Dropdown from "components/shared/Dropdown";
 import { Burger } from "components/ui";
-import { HelpIcon, RemoveIcon, SearchIcon } from "shared/icon";
+import { RemoveIcon, SearchIcon } from "shared/icon";
 import { LogoIcon } from "shared/icon/logo";
 import { Helper } from "components/shared";
 

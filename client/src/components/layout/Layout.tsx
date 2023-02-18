@@ -9,7 +9,7 @@ export const Layout: FC<LayoutProps> = () => {
   return (
     <div className="flex flex-col h-screen min-h-[860px]">
       <div className="h-[40px] hidden screen:block bg-transparent" />
-      <div className="flex flex-col flex-1 max-w-[1440px] h-screen w-full mx-auto screen:rounded-xl bg-uiColor-white">
+      <div className="flex flex-col flex-1 max-w-[1440px] h-screen w-full mx-auto screen:rounded-xl overflow-hidden bg-uiColor-white">
         <Header />
         <div className="flex flex-1 bg-uiColor-white screen-prime:rounded-b-xl">
           <div className="w-1/3 min-w-[255px] max-w-[300px] flex flex-col">
@@ -18,7 +18,7 @@ export const Layout: FC<LayoutProps> = () => {
               <Assistant />
             </div>
           </div>
-          <div className="flex-1 bg-uiColor-gray-3">
+          <div className="flex-1 bg-uiColor-gray-3 max-h-[771px] overflow-hidden mx-auto">
             <Outlet />
           </div>
         </div>

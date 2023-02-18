@@ -23,7 +23,7 @@ import { Tooltip } from "components/shared/Tooltip";
 const arrUser = [
   {
     id: 1,
-    href: "#",
+    href: "/",
     text: "Влейся в стаю!",
     icon: <FlockIcon />,
     iconHover: <FlockIcon isHover />,
@@ -35,7 +35,7 @@ const arrUser = [
   },
   {
     id: 2,
-    href: "#",
+    href: "/company",
     text: "О компании",
     icon: <CompanyIcon />,
     iconHover: <CompanyIcon isHover />,
@@ -46,7 +46,7 @@ const arrUser = [
   },
   {
     id: 3,
-    href: "#",
+    href: "/services",
     text: "Cервисы росмолодежи",
     icon: <ServiceIcon />,
     iconHover: <ServiceIcon isHover />,
@@ -57,7 +57,7 @@ const arrUser = [
   },
   {
     id: 4,
-    href: "#",
+    href: "",
     text: "HR-служба",
     icon: <HRIcon />,
     iconHover: <HRIcon isHover />,
@@ -68,7 +68,7 @@ const arrUser = [
   },
   {
     id: 5,
-    href: "#",
+    href: "",
     text: "Экскурсия",
     icon: <ExcursionIcon />,
     iconHover: <ExcursionIcon isHover />,
@@ -79,7 +79,7 @@ const arrUser = [
   },
   {
     id: 6,
-    href: "#",
+    href: "/team",
     text: "Команда",
     icon: <TeamIcon />,
     iconHover: <TeamIcon isHover />,
@@ -90,7 +90,7 @@ const arrUser = [
   },
   {
     id: 7,
-    href: "#",
+    href: "",
     text: "Мероприятия",
     icon: <EventsIcon />,
     iconHover: <EventsIcon isHover />,
@@ -101,7 +101,7 @@ const arrUser = [
   },
   {
     id: 8,
-    href: "#",
+    href: "/news",
     text: "Новости",
     icon: <NewsIcon />,
     iconHover: <NewsIcon isHover />,

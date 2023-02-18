@@ -44,5 +44,5 @@ module.exports = {
       "screen-toggle": "768px",
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
