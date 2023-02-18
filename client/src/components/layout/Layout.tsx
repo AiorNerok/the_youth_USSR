@@ -1,9 +1,11 @@
 import { Aside, Header } from "components/screens";
 import { Assistant } from "components/shared/Assistant";
 import { FC } from "react";
-import { LayoutProps } from "./interface";
+import { Outlet } from "react-router-dom";
 
-export const Layout: FC<LayoutProps> = ({ children }) => {
+interface LayoutProps {}
+
+export const Layout: FC<LayoutProps> = () => {
   return (
     <div className="flex flex-col h-screen min-h-[860px]">
       <div className="h-[40px] hidden screen:block bg-transparent" />
@@ -16,7 +18,9 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
               <Assistant />
             </div>
           </div>
-          <div className="flex-1 bg-uiColor-gray-3">{children}</div>
+          <div className="flex-1 bg-uiColor-gray-3">
+            <Outlet />
+          </div>
         </div>
         <div className="absolute bottom-[55px] right-[30px]"></div>
       </div>

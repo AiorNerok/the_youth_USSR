@@ -2,6 +2,7 @@ import { FC } from "react";
 
 export const CalendarIcon: FC = () => (
   <svg
+    className="mr-2"
     width="13"
     height="13"
     viewBox="0 0 13 13"

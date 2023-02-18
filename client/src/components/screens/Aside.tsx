@@ -1,13 +1,20 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import { ListItemUI } from "../ui/ListItemUI";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
+  BalanceIcon,
+  CareerPathIcon,
   CompanyIcon,
+  DocumentIcon,
   EventsIcon,
   ExcursionIcon,
   FlockIcon,
   HRIcon,
+  MentorIcon,
+  MessageIcon,
   NewsIcon,
+  PathEnterIcon,
+  PersonalDataIcon,
   ServiceIcon,
   TeamIcon,
 } from "shared/icon";
@@ -16,6 +23,7 @@ import { Tooltip } from "components/shared/Tooltip";
 const arrUser = [
   {
     id: 1,
+    href: "#",
     text: "Влейся в стаю!",
     icon: <FlockIcon />,
     iconHover: <FlockIcon isHover />,
@@ -27,6 +35,7 @@ const arrUser = [
   },
   {
     id: 2,
+    href: "#",
     text: "О компании",
     icon: <CompanyIcon />,
     iconHover: <CompanyIcon isHover />,
@@ -37,6 +46,7 @@ const arrUser = [
   },
   {
     id: 3,
+    href: "#",
     text: "Cервисы росмолодежи",
     icon: <ServiceIcon />,
     iconHover: <ServiceIcon isHover />,
@@ -47,6 +57,7 @@ const arrUser = [
   },
   {
     id: 4,
+    href: "#",
     text: "HR-служба",
     icon: <HRIcon />,
     iconHover: <HRIcon isHover />,
@@ -57,6 +68,7 @@ const arrUser = [
   },
   {
     id: 5,
+    href: "#",
     text: "Экскурсия",
     icon: <ExcursionIcon />,
     iconHover: <ExcursionIcon isHover />,
@@ -67,6 +79,7 @@ const arrUser = [
   },
   {
     id: 6,
+    href: "#",
     text: "Команда",
     icon: <TeamIcon />,
     iconHover: <TeamIcon isHover />,
@@ -77,6 +90,7 @@ const arrUser = [
   },
   {
     id: 7,
+    href: "#",
     text: "Мероприятия",
     icon: <EventsIcon />,
     iconHover: <EventsIcon isHover />,
@@ -87,6 +101,7 @@ const arrUser = [
   },
   {
     id: 8,
+    href: "#",
     text: "Новости",
     icon: <NewsIcon />,
     iconHover: <NewsIcon isHover />,
@@ -107,32 +122,78 @@ export const Aside: FC = () => {
   useEffect(() => {
     if (search === "hr") {
       let arrHR = [
-        { id: 1, text: "Личные данные" },
-        { id: 2, text: "Сообщения" },
-        { id: 3, text: "Личные документы" },
-        { id: 4, text: "Маршрут внедрения" },
-        { id: 5, text: "Новый сотрудник" },
-        { id: 6, text: "Сотрудники" },
-        { id: 7, text: "Баланс" },
-        { id: 8, text: "Карьерный путь" },
-        { id: 9, text: "Наставник" },
+        {
+          icon: <PersonalDataIcon />,
+          href: "#",
+          id: 1,
+          text: "Личные данные",
+        },
+        {
+          icon: <MessageIcon />,
+          href: "#",
+          id: 2,
+          text: "Сообщения",
+        },
+        {
+          icon: <DocumentIcon />,
+          href: "#",
+          id: 3,
+          text: "Личные документы",
+        },
+        {
+          icon: <PathEnterIcon />,
+          href: "#",
+          id: 4,
+          text: "Маршрут внедрения",
+        },
+        {
+          icon: <PathEnterIcon />,
+          href: "#",
+          id: 5,
+          text: "Новый сотрудник",
+        },
+        {
+          icon: <PathEnterIcon />,
+          href: "#",
+          id: 6,
+          text: "Сотрудники",
+        },
+        {
+          icon: <BalanceIcon />,
+          href: "#",
+          id: 7,
+          text: "Баланс",
+        },
+        {
+          icon: <CareerPathIcon />,
+          href: "#",
+          id: 8,
+          text: "Карьерный путь",
+        },
+        {
+          icon: <MentorIcon />,
+          href: "#",
+          id: 9,
+          text: "Наставник",
+        },
       ];
       setArr(arrHR);
     } else {
       setArr(arrUser);
     }
-  }, []);
+  }, [search]);
 
   return (
     <aside>
       <ul className="flex flex-col mx-[10px] text-prime-violet-2 text-3 font-regular">
-        {arr.map(({ id, text, icon, iconHover, tooltip }: any) => (
+        {arr.map(({ id, text, icon, iconHover, tooltip, href }: any) => (
           <AsideItems
             key={id}
             text={text}
             icon={icon}
             iconHover={iconHover}
             tooltip={tooltip}
+            href={href}
           />
         ))}
       </ul>
@@ -146,8 +207,8 @@ interface TooltipPositionProps {
   classes?: string;
 }
 
-const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
-  const [IconEl, setIconEl] = useState<boolean>(icon);
+const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip, href }) => {
+  const [IconEl, setIconEl] = useState(icon);
   function toggleIcon(e: React.MouseEvent) {
     if (e.type === "mouseenter") setIconEl(true);
     if (e.type === "mouseleave") setIconEl(false);
@@ -158,20 +219,11 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
 
   useEffect(() => {
     if (refEl.current) {
-      let { width, height } = refEl.current.getBoundingClientRect();
-      let left = width + 56;
-      let top;
-      let classes;
+      let { width } = refEl.current.getBoundingClientRect();
+      let left = width + 66;
 
       if (tooltip) {
-        if (tooltip.position === "top") {
-          top = -height;
-          classes = "rounded-bl-none";
-        } else if (tooltip.position === "bottom") {
-          top = height;
-          classes = "rounded-tl-none";
-        }
-        let pos: TooltipPositionProps = { left, top, classes };
+        let pos: TooltipPositionProps = { left };
         setPosition(pos);
       }
     }
@@ -183,10 +235,14 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
       onMouseEnter={toggleIcon}
       onMouseLeave={toggleIcon}
     >
-      <div className="relative flex items-center">
-        <ListItemUI text={text} icon={IconEl ? iconHover : icon} ref={refEl} />
-        {tooltip && <Tooltip {...tooltip} position={position} />}
-      </div>
+      <Link to={href} className="relative flex items-center">
+        <ListItemUI
+          text={text}
+          icon={IconEl && iconHover ? iconHover : icon}
+          ref={refEl}
+        />
+      </Link>
+      {tooltip && <Tooltip {...tooltip} position={position} />}
     </li>
   );
 };

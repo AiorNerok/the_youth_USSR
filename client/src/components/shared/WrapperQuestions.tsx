@@ -4,10 +4,19 @@ import { nanoid } from "nanoid";
 import { quests } from "data/quests";
 import { CardUI } from "components/ui/CardUI";
 
-export const WrapperQuestions: FC = () => {
-  let data = quests.filter((i) => i.isCompleted === false);
+interface WrapperQuestionsProps {
+  isCompleted: boolean;
+  classes?: string;
+}
+
+export const WrapperQuestions: FC<WrapperQuestionsProps> = ({
+  isCompleted,
+  classes=''
+}) => {
+  let data = quests.filter((i) => i.isCompleted === isCompleted);
+
   return (
-    <div className="inline-flex flex-row px-3 space-x-2 bg-uiColor-violet rounded-xl p-3">
+    <div className={`inline-flex flex-row px-3 space-x-2 rounded-xl p-3 ${classes}`}>
       {data.map((i) => {
         return <CardUI key={nanoid()} {...i} />;
       })}

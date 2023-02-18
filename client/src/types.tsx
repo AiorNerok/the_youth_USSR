@@ -6,8 +6,3 @@ export interface IconProps {
   isHover?: boolean
 }
 
-export interface ListItemProps {
-  text: string;
-  icon?: JSX.Element | string;
-  iconHover?: JSX.Element | string;
-}

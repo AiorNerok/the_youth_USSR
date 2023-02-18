@@ -10,21 +10,21 @@ const arr = [
     text: "Войти в личный кабинет",
     icon: <FlockIcon />,
     iconHover: <FlockIcon isHover />,
-    classes: "",
+    href: "#",
   },
   {
     id: 2,
     text: "Помощь",
     icon: <HelpIcon />,
     iconHover: <HelpIcon isHover />,
-    classes: "",
+    href: "#",
   },
   {
     id: 3,
     text: "Выйти",
     icon: <LogoutIcon />,
     iconHover: <LogoutIcon isHover />,
-    classes: "",
+    href: "#",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Dropdown() {
             </span>
           </Menu.Item>
           <div className="px-1 py-1 ">
-            {arr.map(({ id, icon, text, classes, iconHover }) => {
+            {arr.map(({ id, icon, text, iconHover }) => {
               return (
                 <Menu.Item key={id}>
                   {({ active }) => {

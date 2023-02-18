@@ -1,5 +1,10 @@
 import React from "react";
-import { ListItemProps } from "types";
+
+export interface ListItemProps {
+  text: string;
+  icon?: JSX.Element | string;
+  iconHover?: JSX.Element | string;
+}
 
 export const ListItemUI = React.forwardRef<HTMLSpanElement, ListItemProps>(
   ({ text, icon }, ref) => {

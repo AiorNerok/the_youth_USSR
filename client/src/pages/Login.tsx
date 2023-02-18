@@ -3,14 +3,12 @@ import { useMemo, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AsterikIcon, PasswordIcon, PasswordShowIcon } from "shared/icon";
 
-import { mockUsers } from "data/mockUsers";
-
 type Inputs = {
   username: string;
   password: string;
 };
 
-export const Login = () => {  
+export const Login = () => {
   const [showPass, setShowPass] = useState<boolean>(true);
 
   const AssistantCallBack = useMemo(() => <Assistant />, []);
@@ -26,14 +24,9 @@ export const Login = () => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     let { username, password } = data;
-    let user = mockUsers.filter((i) => {
-      if (i.password === password && i.username === username) {
-        return i;
-      }
-    });
 
-    if (user.length) {
-      console.log('ok')
+    if (1) {
+      console.log("ok", { username, password });
     } else {
       setError("username", {
         type: "custom",

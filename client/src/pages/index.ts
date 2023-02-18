@@ -1,3 +1,3 @@
 export * from './Home'
-export * from './HR'
+export * from './HomeChildren'
 export * from './Login'
