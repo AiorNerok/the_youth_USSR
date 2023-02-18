@@ -10,10 +10,7 @@ type Inputs = {
   password: string;
 };
 
-export const Login = () => {
-  let val = JSON.parse(localStorage.getItem("user") as string);
-
-  
+export const Login = () => {  
   const [showPass, setShowPass] = useState<boolean>(true);
 
   const AssistantCallBack = useMemo(() => <Assistant />, []);
@@ -36,11 +33,7 @@ export const Login = () => {
     });
 
     if (user.length) {
-      let { password, typeUser, username } = { ...user[0] };
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ password, typeUser, username })
-      );
+      console.log('ok')
     } else {
       setError("username", {
         type: "custom",
