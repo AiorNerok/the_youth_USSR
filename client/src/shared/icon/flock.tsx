@@ -6,9 +6,8 @@ export const FlockIcon: FC<IconProps> = ({
   rectfill = "#FF8CA9",
   isHover,
 }) => {
-  if (isHover) {
-    [pathfill, rectfill] = [rectfill, pathfill];
-  }
+  if (isHover) [pathfill, rectfill] = [rectfill, pathfill];
+
   return (
     <svg
       width="26"

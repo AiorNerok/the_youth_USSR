@@ -6,9 +6,8 @@ export const HelpIcon: FC<IconProps> = ({
   pathfill = "#5177FF",
   rectfill = "#fff",
 }) => {
-  if (isHover) {
-    [pathfill, rectfill] = [rectfill, pathfill];
-  }
+  if (isHover) [pathfill, rectfill] = [rectfill, pathfill];
+
 
   return (
     <svg

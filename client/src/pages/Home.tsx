@@ -5,7 +5,10 @@ import { HomePageProps } from "types";
 export const Home: FC<HomePageProps> = () => {
   return (
     <div>
-      <WrapperQuestions />
+      <div>
+        <h4>Мои квесты</h4>
+        <WrapperQuestions />
+      </div>
     </div>
   );
 };

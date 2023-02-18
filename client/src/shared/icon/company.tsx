@@ -6,9 +6,8 @@ export const CompanyIcon: FC<IconProps> = ({
   pathfill = "#5177FF",
   rectfill = "#BAE6FF",
 }) => {
-  if (isHover) {
-    [pathfill, rectfill] = [rectfill, pathfill];
-  }
+  if (isHover) [pathfill, rectfill] = [rectfill, pathfill];
+
 
   return (
     <svg

@@ -1,5 +1,5 @@
 import { Layout } from "components/layout";
-import { Home } from "pages";
+import { Home, HR } from "pages";
 import { createBrowserRouter } from "react-router-dom";
 
 export const routes = createBrowserRouter([
@@ -8,6 +8,14 @@ export const routes = createBrowserRouter([
     element: (
       <Layout>
         <Home />
+      </Layout>
+    ),
+  },
+  {
+    path: "/hr",
+    element: (
+      <Layout>
+        <HR />
       </Layout>
     ),
   },
