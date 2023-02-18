@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import { ListItemUI } from "../ui/ListItemUI";
+import { useLocation } from "react-router-dom";
 import {
   CompanyIcon,
   EventsIcon,
@@ -12,7 +13,7 @@ import {
 } from "shared/icon";
 import { Tooltip } from "components/shared/Tooltip";
 
-const arr = [
+const arrUser = [
   {
     id: 1,
     text: "Влейся в стаю!",
@@ -29,7 +30,6 @@ const arr = [
     text: "О компании",
     icon: <CompanyIcon />,
     iconHover: <CompanyIcon isHover />,
-    classes: "",
     tooltip: {
       text: "Изучай историю и достижения компании",
       position: "top",
@@ -40,7 +40,6 @@ const arr = [
     text: "Cервисы росмолодежи",
     icon: <ServiceIcon />,
     iconHover: <ServiceIcon isHover />,
-    classes: "",
     tooltip: {
       text: "Познакомься с сервисами ",
       position: "top",
@@ -51,7 +50,6 @@ const arr = [
     text: "HR-служба",
     icon: <HRIcon />,
     iconHover: <HRIcon isHover />,
-    classes: "",
     tooltip: {
       text: "По вопросам карьеры и не только тебе поможет HR",
       position: "top",
@@ -62,7 +60,6 @@ const arr = [
     text: "Экскурсия",
     icon: <ExcursionIcon />,
     iconHover: <ExcursionIcon isHover />,
-    classes: "",
     tooltip: {
       text: "Заблудился? Взгляни на карту",
       position: "top",
@@ -73,7 +70,6 @@ const arr = [
     text: "Команда",
     icon: <TeamIcon />,
     iconHover: <TeamIcon isHover />,
-    classes: "",
     tooltip: {
       text: "Узнай стаю! Контакты и должности здесь",
       position: "top",
@@ -84,7 +80,6 @@ const arr = [
     text: "Мероприятия",
     icon: <EventsIcon />,
     iconHover: <EventsIcon isHover />,
-    classes: "",
     tooltip: {
       text: "Все интерактивы компании. Сохраняй к себе, чтобы не пропустить",
       position: "top",
@@ -95,7 +90,6 @@ const arr = [
     text: "Новости",
     icon: <NewsIcon />,
     iconHover: <NewsIcon isHover />,
-    classes: "",
     tooltip: {
       text: "Что-то новенькое! Зайди и узнай",
       position: "top",
@@ -104,10 +98,35 @@ const arr = [
 ];
 
 export const Aside: FC = () => {
+  let location = useLocation();
+
+  let search = location.search.split("=")[1];
+
+  const [arr, setArr] = useState<any>(arrUser);
+
+  useEffect(() => {
+    if (search === "hr") {
+      let arrHR = [
+        { id: 1, text: "Личные данные" },
+        { id: 2, text: "Сообщения" },
+        { id: 3, text: "Личные документы" },
+        { id: 4, text: "Маршрут внедрения" },
+        { id: 5, text: "Новый сотрудник" },
+        { id: 6, text: "Сотрудники" },
+        { id: 7, text: "Баланс" },
+        { id: 8, text: "Карьерный путь" },
+        { id: 9, text: "Наставник" },
+      ];
+      setArr(arrHR);
+    } else {
+      setArr(arrUser);
+    }
+  }, []);
+
   return (
     <aside>
       <ul className="flex flex-col mx-[10px] text-prime-violet-2 text-3 font-regular">
-        {arr.map(({ id, text, icon, iconHover, tooltip }) => (
+        {arr.map(({ id, text, icon, iconHover, tooltip }: any) => (
           <AsideItems
             key={id}
             text={text}
@@ -144,16 +163,17 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
       let top;
       let classes;
 
-      if (tooltip.position === "top") {
-        top = -height;
-        classes = "rounded-bl-none";
-      } else if (tooltip.position === "bottom") {
-        top = height;
-        classes = "rounded-tl-none";
+      if (tooltip) {
+        if (tooltip.position === "top") {
+          top = -height;
+          classes = "rounded-bl-none";
+        } else if (tooltip.position === "bottom") {
+          top = height;
+          classes = "rounded-tl-none";
+        }
+        let pos: TooltipPositionProps = { left, top, classes };
+        setPosition(pos);
       }
-      let pos: TooltipPositionProps = { left, top, classes };
-
-      setPosition(pos);
     }
   }, [tooltip]);
 
@@ -165,7 +185,7 @@ const AsideItems: FC<any> = ({ text, icon, iconHover, tooltip }) => {
     >
       <div className="relative flex items-center">
         <ListItemUI text={text} icon={IconEl ? iconHover : icon} ref={refEl} />
-        <Tooltip {...tooltip} position={position} />
+        {tooltip && <Tooltip {...tooltip} position={position} />}
       </div>
     </li>
   );

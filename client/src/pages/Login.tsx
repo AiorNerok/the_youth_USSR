@@ -1,7 +1,9 @@
 import { Assistant } from "components";
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AsterikIcon, PasswordIcon, PasswordShowIcon } from "shared/icon";
+
+import { mockUsers } from "data/mockUsers";
 
 type Inputs = {
   username: string;
@@ -9,6 +11,9 @@ type Inputs = {
 };
 
 export const Login = () => {
+  let val = JSON.parse(localStorage.getItem("user") as string);
+
+  
   const [showPass, setShowPass] = useState<boolean>(true);
 
   const AssistantCallBack = useMemo(() => <Assistant />, []);
@@ -18,11 +23,35 @@ export const Login = () => {
   const {
     register,
     handleSubmit,
-    reset,
+    setError,
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    let { username, password } = data;
+    let user = mockUsers.filter((i) => {
+      if (i.password === password && i.username === username) {
+        return i;
+      }
+    });
+
+    if (user.length) {
+      let { password, typeUser, username } = { ...user[0] };
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ password, typeUser, username })
+      );
+    } else {
+      setError("username", {
+        type: "custom",
+        message: "Error username",
+      });
+      setError("password", {
+        type: "custom",
+        message: "Error password",
+      });
+    }
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -59,6 +88,7 @@ export const Login = () => {
                 style={{
                   borderColor: errors.password ? "#F03E3E" : "",
                 }}
+                type={showPass ? "password" : "text"}
               />
             </div>
           </label>

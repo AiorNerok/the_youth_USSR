@@ -1,18 +1,29 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
 
-export const useUserStorage = create(
-  persist(
-    (set, get) => ({
-      user: {
-        name: "",
-        password: "",
-      },
-      login: () => ({}),
-      logout: () => ({}),
-    }),
-    {
-      name: "user",
-    }
-  )
-);
+interface UserProps {
+  username: string;
+  password: string;
+  typeUser: string;
+}
+
+export interface useUserStorageProps extends UserProps {
+  login: (payload: {
+    username: string;
+    password: string;
+    typeUser: string;
+  }) => void;
+  logout: () => void;
+}
+
+export const useUserStorage = create<useUserStorageProps>((set, get) => ({
+  username: "",
+  password: "",
+  typeUser: "",
+  login: (userPayload: UserProps) =>
+    set(() => ({
+      username: userPayload.username,
+      password: userPayload.password,
+      typeUser: userPayload.typeUser,
+    })),
+  logout: () => set({ username: "", password: "", typeUser: "" }),
+}));
